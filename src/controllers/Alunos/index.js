@@ -5,8 +5,8 @@ const alunosService = new AlunosService();
 class AlunosController {
 	static async selectAllAlunos(req, res) {
 		try {
-			const resp = await alunosService.getAll();
-			return res.json(resp);
+			const { rows } = await alunosService.getAll();
+			return res.json(rows);
 		} catch (err) {
 			res.json(err);
 			console.log(err);
